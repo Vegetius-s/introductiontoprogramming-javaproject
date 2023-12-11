@@ -1,10 +1,21 @@
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * This class contains the methods for creating and running the ContactsApp.
+ * 
+ * Implements the ActionListener interface to listen to presses of the JButtons.
+ * 
+ * @author Veikka Luukkonen
+ */
 public class CreateWindow implements ActionListener {
     static JTextField id, fname, lname, phnum, addr, email;
     static JButton add, clear, delete, update, open;
-    static JLabel idL, fnameL, lnameL, phnumL, addrL, emailL;
+    static JLabel idL, fnameL, lnameL, phnumL, addrL, emailL, instruct;
+    /**
+     * Constructor of the CreateWindow-class.
+     * Contains operations for creating the application window.
+     */
     CreateWindow() {
         JFrame gui = new JFrame();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,18 +56,20 @@ public class CreateWindow implements ActionListener {
         email.setBounds(200,300,150,20);
 
         // Create JLabels
-        idL = new JLabel("ID Number:");
-        idL.setBounds(120, 50, 150, 20);
-        fnameL = new JLabel("First name:");
-        fnameL.setBounds(120,100,150,20);
-        lnameL = new JLabel("Last name:");
-        lnameL.setBounds(120,150,150,20);
-        phnumL = new JLabel("Phone number:");
-        phnumL.setBounds(100,200,150,20);
+        idL = new JLabel("(**) ID Number:");
+        idL.setBounds(100, 50, 150, 20);
+        fnameL = new JLabel("(*) First name:");
+        fnameL.setBounds(100,100,150,20);
+        lnameL = new JLabel("(*) Last name:");
+        lnameL.setBounds(100,150,150,20);
+        phnumL = new JLabel("(**) Phone number:");
+        phnumL.setBounds(70,200,150,20);
         addrL = new JLabel("Address (Optional):");
         addrL.setBounds(78,250,150,20);
         emailL = new JLabel("Email (Optional):");
         emailL.setBounds(95,300,150,20);
+        instruct = new JLabel("((**) Required for adding and updating) ((*) Always required)");
+        instruct.setBounds(10,330,380,20);
 
         // Add JLabels to window
         gui.add(idL);
@@ -65,6 +78,7 @@ public class CreateWindow implements ActionListener {
         gui.add(phnumL);
         gui.add(addrL);
         gui.add(emailL);
+        gui.add(instruct);
 
         // Add textfield to window
         gui.add(id);
@@ -80,7 +94,18 @@ public class CreateWindow implements ActionListener {
         gui.setSize(400,400);
         gui.setVisible(true);
     }
-    public void actionPerformed(ActionEvent e) { // clear button pressed
+    /**
+     * Implementation of the actionPerformed method of the ActionListener interface.
+     * 
+     * User presses the clear button = empties all text fields.
+     * User presses the add button = calls method validateRows of the Validate class.
+     * User presses the delete button = calls method of the DeleteContact class.
+     * User presses the open button = calls method of the OpenContact class.
+     * User presses the update button = calls method updateContact of the UpdateContact class.
+     * 
+     * @param e Actionevent. User pressed button.
+     */
+    public void actionPerformed(ActionEvent e) {
         if (e.getSource() == clear) {
             id.setText("");
             fname.setText("");
@@ -89,7 +114,7 @@ public class CreateWindow implements ActionListener {
             addr.setText("");
             email.setText("");
         }
-        else if (e.getSource() == add) { // add button pressed
+        else if (e.getSource() == add) {
             Validate.validateRows();
         }
         else if (e.getSource() == delete) {

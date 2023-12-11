@@ -3,8 +3,23 @@ import java.awt.event.*;
 import java.lang.*;
 import java.io.*;
 
+/**
+ * This class contains one method for saving a contact as a .txt file.
+ * 
+ * Since the email and address fields are optional, they can be left out.
+ * 
+ * @author Veikka Luukkonen
+ */
 public class SaveContact {
-    // Save contact as .txt file
+    /**
+     * This method contains operations for the creation of a .txt file.
+     * 
+     * User needs to have a directory by the name of savedcontacts in the working directory.
+     * The .txt file is named after the first and last name of the contact.
+     * 
+     * @param addrCreate An integer value. 0 if to be left out, 1 if included. (addr text field)
+     * @param emailCreate An integer value. 0 if to be left out, 1 if included. (email text field)
+     */
     public static void saveContact(int addrCreate, int emailCreate) {
         boolean createAddr = false;
         boolean createEmail = false;

@@ -3,7 +3,19 @@ import java.awt.event.*;
 import java.lang.*;
 import java.io.*;
 
+/**
+ * This class contains one method for the updaing of a .txt file.
+ * 
+ * Deletes previous file and creates a new one by the same name.
+ * 
+ * @author Veikka Luukkonen
+ */
 public class UpdateContact {
+    /**
+     * This method is responsible for updating a .txt file.
+     * 
+     * Calls methods from the DeleteContact and SaveContact classes to re-create a .txt file.
+     */
     public static void updateContact() {
         boolean validIdUpdate = Validate.validateID();
         boolean validNamesUpdate = Validate.validateNames();

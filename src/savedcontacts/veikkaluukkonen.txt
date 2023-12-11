@@ -1,6 +1,0 @@
-Id: 220103A529U
-First name: Veikka
-Last name: Luukkonen
-Phone number: 0442315317
-Address: Pellekuja 12 D 3
-Email: luukkonenveikka@gmail.com

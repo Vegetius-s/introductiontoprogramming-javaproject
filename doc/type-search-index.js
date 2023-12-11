@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"ContactsApp"},{"p":"<Unnamed>","l":"CreateWindow"},{"p":"<Unnamed>","l":"DeleteContact"},{"p":"<Unnamed>","l":"OpenContact"},{"p":"<Unnamed>","l":"SaveContact"},{"p":"<Unnamed>","l":"UpdateContact"},{"p":"<Unnamed>","l":"Validate"}];updateSearchResults();
