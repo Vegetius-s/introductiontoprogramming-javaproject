@@ -18,7 +18,7 @@ Complete!
 This application can be used to: create, delete, update and open Contacts as .txt files.
 
 ## Installation
-# Make sure you have JDK17 or newer installed!
+Make sure you have JDK17 or newer installed!
 1. Open your computers command prompt.
 2. Run the following command: gh repo clone Vegetius-s/introductiontoprogramming-javaproject
 3. Run the command: cd introductiontoprogramming-javaproject
